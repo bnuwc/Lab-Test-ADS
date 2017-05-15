@@ -1,0 +1,20 @@
+  public void testUnautorize () {
+        System.setProperty("webdriver.chrome.driver"
+                , "src/main/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+
+        String baseUrl = "http://localhost:4200/";
+
+----------------
+ public void testnonPassword() {
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\toon__000\\Downloads\\SE234-project1-master\\SE234-project1-master\\src\\main\\resources\\geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        String baseUrl = "http://localhost:4200/";
+
+        driver.get("http://localhost:4200/login");
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("");
+        driver.findElement(By.cssSelector("button.btn.btn-primary")).click();
+        assertEquals("Password is required", driver.findElement(By.cssSelector("span.help-block")).getText());
+    }
